@@ -6,8 +6,8 @@ const Loader = () => {
       <div
         style={{
           display: "flex",
-          justifyContent:"center",
-          alignItems:"center"
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         Loading...
