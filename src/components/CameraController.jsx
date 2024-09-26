@@ -14,7 +14,7 @@ function CameraController({ zoomIn, sideZoomIn, resetCamera, stageZoomIn }) {
       camera.position.lerp({ x: -3, y: 0.4, z: -0.2 }, 0.005); // Side zoom-in position
       camera.lookAt(0, 0, 0);
     } else if (stageZoomIn) {
-      camera.position.lerp({ x: 0, y: 0, z: 2 },0.005);
+      camera.position.lerp({ x: 0, y: 0.5, z: 2 },0.005);
       camera.lookAt(0, 0, 0);
     }
   });

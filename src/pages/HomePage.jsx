@@ -1,10 +1,9 @@
 import React, { Suspense, useEffect, useState } from "react";
 import "./HomePage.css";
-import { Canvas, useThree } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import Loader from "../components/Loader/Loader";
 import { WaterWave } from "../models/WaterWave";
 import { Sky } from "../models/Sky";
-import LightHouse from "../models/LightHouse";
 import Ship from "../models/Ship";
 import CameraController from "../components/CameraController";
 import { Html, OrbitControls } from "@react-three/drei";
@@ -19,12 +18,13 @@ export const HomePage = () => {
   const [zoomIn, setzoomIn] = useState(false);
   const [sideZoomIn, setSideZoomIn] = useState(false);
   const [resetCamera, setResetCamera] = useState(false);
-  const [shipPosition, setShipPosition] = useState([-3, -1, 0.1]);
+  const [shipPosition, setShipPosition] = useState([-2, -1, 0.1]);
 
   const stagePostions = [
-    [1, 0, 0],
-    [2, 0, 0],
-    [-1, 0, 0],
+    { postion: [-0.2, -0.2, 0.1], link: "about" },
+    { postion: [1.5, -0.2, 0.1], link: "projects" },
+    { postion: [2.5, -0.2, 0.1], link: "resume" },
+    { postion: [-2.5, 0.5, 0.1], link: "skills" },
   ];
 
   useEffect(() => {
@@ -79,7 +79,7 @@ export const HomePage = () => {
           <directionalLight position={[1, -8, 0]} intensity={2} />
           <ambientLight intensity={1.5} />
           <Sky />
-          <LightHouse position={[-7.5, -0.6, 0]} />
+          {/* <LightHouse position={[-7.5, -0.6, 0]} /> */}
           <Ship movingShip={movingShip} position={shipPosition} />
           <CameraController
             zoomIn={zoomIn}
@@ -105,7 +105,14 @@ export const HomePage = () => {
           )}
           {stages &&
             stagePostions.map((stage, index) => {
-              return <Stage position={stage} key={index} />;
+              return (
+                <Stage
+                  position={stage.postion}
+                  key={index}
+                  stageZoomIn={stageZoomIn}
+                  link={stage.link}
+                />
+              );
             })}
           {stageIntro && (
             <Html position={[-2, -1.2, 1]}>

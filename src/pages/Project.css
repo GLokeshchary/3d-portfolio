@@ -1,0 +1,27 @@
+.project-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 50px;
+    display: flex;
+    background: linear-gradient(rgb(241, 206, 91), rgb(8, 8, 126));
+    flex-direction: column;
+    gap: 20px;
+    color: #0a0a0a;
+  }
+  .project-display {
+    display: flex;
+    font-size: 2rem;
+    flex-direction: row;
+  }
+  .project-display .name {
+    background: linear-gradient(rgb(122, 164, 228), rgb(8, 8, 126));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .projects-list{
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }

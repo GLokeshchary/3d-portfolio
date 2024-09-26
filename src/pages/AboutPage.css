@@ -1,0 +1,129 @@
+.about-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px;
+  display: flex;
+  background: linear-gradient(rgb(241, 206, 91), rgb(8, 8, 126));
+  flex-direction: column;
+  gap: 20px;
+  color: #0a0a0a;
+}
+.name-display {
+  display: flex;
+  font-size: 2rem;
+  flex-direction: row;
+}
+.name-display .name {
+  background: linear-gradient(rgb(122, 164, 228), rgb(8, 8, 126));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.description {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: left;
+  font-size: 1.1rem;
+}
+.my-skills h2 {
+  font-size: 2rem;
+}
+.my-skills {
+  width: 100%;
+  position: relative;
+}
+.skills-display {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.work-exp {
+}
+.work-exp h2 {
+  font-size: 2rem;
+  color: white;
+}
+.work-exp-section {
+  display: flex;
+  margin-top: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+/* Mobile styles */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 30px;
+  }
+  .name-display {
+    font-size: 1.5rem;
+    flex-direction: column;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .skills-display {
+    margin-top: 10px;
+    gap: 15px;
+  }
+
+  .work-exp h2 {
+    font-size: 1.5rem;
+  }
+
+  .work-exp-section {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-container {
+    padding: 40px;
+  }
+
+  .name-display {
+    font-size: 1.75rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .skills-display {
+    gap: 20px;
+  }
+
+  .work-exp h2 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+  .about-container {
+    padding: 100px;
+  }
+
+  .name-display {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    text-align: left;
+  }
+
+  .skills-display {
+    margin-top: 15px;
+    gap: 30px;
+  }
+
+  .work-exp-section {
+    flex-direction: row;
+  }
+}
