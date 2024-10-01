@@ -1,72 +1,93 @@
-.home-container{
-    width: 100%;
-    height: 100vh;
-    position: relative;
+.home-container {
+  width: 100%;
+  height: 100vh;
+  position: relative; 
 }
+
 .intro-container {
-    /* background-color: rgb(177, 244, 252); */
-    width: max-content;
-    background: transparent;
-    height: max-content;
-    padding: 15px;
-    color: white;
-    border-radius: 20px;
-  }
-  .into {
-    display: flex;
-    flex-direction: column;
-  }
-  .inner-intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+  width: max-content;
+  background: transparent;
+  height: max-content;
+  padding: 15px;
+  color: white;
+  border-radius: 20px;
+}
+
+.into {
+  display: flex;
+  flex-direction: column;
+}
+
+.inner-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-intro .name {
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.inner-intro .status {
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.next-button {
+  width: 100%;
+  font-size: 14px;
+  text-align: right;
+  color: wheat;
+}
+
+.next-button span {
+  cursor: pointer;
+}
+
+.stage-intro-container {
+  width: max-content;
+  background: transparent;
+  height: max-content;
+  padding: 15px;
+  font-size: 25px;
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.ok-button {
+  width: 100%;
+  font-size: 14px;
+  text-align: center;
+  color: rgb(188, 106, 55);
+}
+
+.ok-button span {
+  cursor: pointer;
+}
+
+.speaker {
+  position: absolute;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(100, 187, 245);
+  bottom: 20px; 
+  left: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .inner-intro .name {
-    font-weight: bold;
-    font-size: 35px;
+      font-size: 25px;
   }
   .inner-intro .status {
-    font-weight: 600;
-    font-size: 25px;
-  }
-  .next-button{
-      width: 100%;
-      font-size: 14px;
-      text-align: right;
-      color : wheat;
-      
-  }
-  .next-button span{
-      cursor: pointer;
-  }
-
-
-  .stage-intro-container{
-    width: max-content;
-    background: transparent;
-    height: max-content;
-    padding: 15px;
-    font-size: 25px;
-    color: white;
-    border-radius: 20px;
-    font-weight: bold;
-  }
-  .ok-button{
-    width: 100%;
-      font-size: 14px;
-      text-align: center;
-      color : rgb(188, 106, 55);
-  }
-  .ok-button span{
-    cursor: pointer;
-  }
-  @media (max-width: 768px) {
-    .inner-intro .name {
-      font-size: 25px;
-    }
-    .inner-intro .status {
       font-size: 20px;
-    }
   }
-  
+}

@@ -9,8 +9,7 @@ export const projects = [
       { name: "mysql", color: "#78aae7" },
       { name: "java", color: "#f3a54c" },
     ],
-    projectImage:
-      "https://findlokeshchary.netlify.app/animesense/DashBoard.png",
+    projectImage: "/projects/DashBoard.png",
     githunLink: "https://github.com/GLokeshchary/AnimeSense-Frontend",
     liveLink: "https://anime-sense.vercel.app/",
   },
@@ -19,7 +18,7 @@ export const projects = [
     projectDescription:
       "This portfolio showcases my journey as a developer, highlighting my projects and skills in web development. Built using React.js, the portfolio is designed to provide a user-friendly experience, allowing visitors to navigate seamlessly through my work. Each project is detailed with descriptions, technologies used, and links to live demos and GitHub repositories.",
     tags: [{ name: "react", color: "#00ffff" }],
-    projectImage: "/assests/2dportfolio.png",
+    projectImage: "/projects/2dportfolio.png",
     githunLink: "https://github.com/GLokeshchary/portfolio/tree/master",
     liveLink: "https://findlokeshchary.netlify.app/",
   },
@@ -33,21 +32,21 @@ export const projects = [
       { name: "mysql", color: "#78aae7" },
       { name: "java", color: "#f3a54c" },
     ],
-    projectImage: "https://findlokeshchary.netlify.app/garuda/Home.png",
+    projectImage: "/projects/Home.png",
     githunLink:
       "https://github.com/GLokeshchary/FlightManagementSystem-Frontend/tree/master",
     liveLink: "",
   },
-  {
-    projectName: "3D-Portfolio",
-    projectDescription:
-      "This 3D portfolio showcases my journey as a developer, highlighting my projects and skills in web development. Built using React.js and Three.js, the portfolio features interactive 3D elements that enhance user engagement and experience. It allows visitors to navigate seamlessly through my work.",
-    tags: [
-      { name: "react", color: "#00ffff" },
-      { name: "Three.js", color: "#f5f5dc" },
-    ],
-    projectImage: "/assests/2dportfolio.png",
-    githunLink: "https://github.com/GLokeshchary/portfolio/tree/master",
-    liveLink: "https://findlokeshchary.netlify.app/",
-  },
+  // {
+  //   projectName: "3D-Portfolio",
+  //   projectDescription:
+  //     "This 3D portfolio showcases my journey as a developer, highlighting my projects and skills in web development. Built using React.js and Three.js, the portfolio features interactive 3D elements that enhance user engagement and experience. It allows visitors to navigate seamlessly through my work.",
+  //   tags: [
+  //     { name: "react", color: "#00ffff" },
+  //     { name: "Three.js", color: "#f5f5dc" },
+  //   ],
+  //   projectImage: "/assests/2dportfolio.png",
+  //   githunLink: "https://github.com/GLokeshchary/3d-portfolio",
+  //   liveLink: "https://findlokeshchary.netlify.app/",
+  // },
 ];

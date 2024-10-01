@@ -20,6 +20,8 @@
     -webkit-text-fill-color: transparent;
   }
   .projects-list{
+    margin-top: 15px;
+    margin-bottom: 15px;
     justify-content: center;
     display: flex;
     gap: 10px;

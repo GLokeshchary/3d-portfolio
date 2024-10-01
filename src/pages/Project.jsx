@@ -2,6 +2,7 @@ import React from "react";
 import "./Project.css";
 import { ProjectCard } from "../components/ProjectCard/ProjectCard";
 import { projects } from "../constants/projects";
+import Footer from "../components/Footer/Footer";
 const Project = () => {
   return (
     <section className="project-container">
@@ -21,6 +22,9 @@ const Project = () => {
         {projects.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
+      </div>
+      <div className="footer">
+        <Footer/>
       </div>
     </section>
   );

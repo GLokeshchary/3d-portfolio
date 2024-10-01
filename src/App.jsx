@@ -4,14 +4,18 @@ import Navbar from "./components/NavBar/Navbar";
 import { HomePage } from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import Project from "./pages/Project";
+import ContactPage from "./pages/ContactPage";
+import { ToastContainer } from "react-toastify";
 function App() {
   return (
     <main>
+      <ToastContainer />
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/projects" element={<Project/>} />
+          <Route path="/projects" element={<Project />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </Router>
       {/* <HomePage /> */}

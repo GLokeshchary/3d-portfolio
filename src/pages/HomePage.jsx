@@ -1,5 +1,7 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState, useRef } from "react";
 import "./HomePage.css";
+import { HiMiniSpeakerWave } from "react-icons/hi2";
+import { HiMiniSpeakerXMark } from "react-icons/hi2";
 import { Canvas } from "@react-three/fiber";
 import Loader from "../components/Loader/Loader";
 import { WaterWave } from "../models/WaterWave";
@@ -9,6 +11,7 @@ import CameraController from "../components/CameraController";
 import { Html, OrbitControls } from "@react-three/drei";
 import Stage from "../components/Stage/Stage";
 import { FaLocationDot } from "react-icons/fa6";
+import got from "/assests/got.mp3";
 export const HomePage = () => {
   const [showIntro, setShowIntro] = useState(false);
   const [stages, setStages] = useState(false);
@@ -19,14 +22,25 @@ export const HomePage = () => {
   const [sideZoomIn, setSideZoomIn] = useState(false);
   const [resetCamera, setResetCamera] = useState(false);
   const [shipPosition, setShipPosition] = useState([-2, -1, 0.1]);
+  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+  const audioRef = useRef(new Audio(got));
+  audioRef.current.volume = 0.2;
+  audioRef.current.loop = true;
 
   const stagePostions = [
     { postion: [-0.2, -0.2, 0.1], link: "about" },
     { postion: [1.5, -0.2, 0.1], link: "projects" },
-    { postion: [2.5, -0.2, 0.1], link: "resume" },
-    { postion: [-2.5, 0.5, 0.1], link: "skills" },
+    // { postion: [2.5, -0.2, 0.1], link: "resume" },
+    // { postion: [-2.5, 0.5, 0.1], link: "skills" },
   ];
-
+  useEffect(() => {
+    if (isPlayingMusic) {
+      audioRef.current.play();
+    }
+    return () => {
+      audioRef.current.pause();
+    };
+  }, [isPlayingMusic]);
   useEffect(() => {
     setMovingShip(true);
     setzoomIn(true);
@@ -74,7 +88,7 @@ export const HomePage = () => {
   return (
     <section className="home-container">
       <Canvas camera={{ near: 0.1, far: 1000 }}>
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={<Loader flag={"main"} />}>
           {/* <OrbitControls enableDamping enableRotate /> */}
           <directionalLight position={[1, -8, 0]} intensity={2} />
           <ambientLight intensity={1.5} />
@@ -130,6 +144,12 @@ export const HomePage = () => {
           <WaterWave position={[1, -8, 0]} />
         </Suspense>
       </Canvas>
+      <div
+        onClick={() => setIsPlayingMusic(!isPlayingMusic)}
+        className="speaker"
+      >
+        {!isPlayingMusic ? <HiMiniSpeakerXMark /> : <HiMiniSpeakerWave />}
+      </div>
     </section>
   );
 };

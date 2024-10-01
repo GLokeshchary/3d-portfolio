@@ -5,6 +5,7 @@ import { TechStack } from "../constants/skills";
 import { VerticalTimeline } from "react-vertical-timeline-component";
 import { experiences } from "../constants/experiences";
 import WorkExpCard from "../components/WorkExperience/WorkExpCard";
+import Footer from "../components/Footer/Footer";
 const AboutPage = () => {
   return (
     <section className="about-container">
@@ -45,6 +46,9 @@ const AboutPage = () => {
             ))}
           </VerticalTimeline>
         </div>
+      </div>
+      <div className="footer">
+        <Footer/>
       </div>
     </section>
   );

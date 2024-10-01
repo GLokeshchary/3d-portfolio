@@ -1,0 +1,89 @@
+.cta {
+    color: white;
+    display: flex;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    padding: 40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cta-text {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.linkbutton {
+    background-color: rgb(71, 119, 239);
+    text-align: center;
+    width: max-content;
+    padding: 10px 20px;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.linkbutton span {
+    color: white;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+
+/* Tablet Screens */
+@media (max-width: 1024px) {
+    .cta {
+        height: auto; 
+        padding: 30px;
+        justify-content: center;
+    }
+
+    .cta-text {
+        font-size: 1.8rem;
+    }
+
+    .linkbutton {
+        padding: 10px 15px;
+    }
+}
+
+/* Mobile Screens */
+@media (max-width: 768px) {
+    .cta {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .cta-text {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .linkbutton {
+        width: 100%; 
+        padding: 15px;
+        border-radius: 20px; 
+    }
+
+    .linkbutton span {
+        font-size: 1.2rem;
+    }
+}
+
+/* Small Mobile Screens */
+@media (max-width: 480px) {
+    .cta-text {
+        font-size: 1.3rem;
+    }
+
+    .linkbutton {
+        padding: 12px 15px;
+        border-radius: 15px;
+    }
+
+    .linkbutton span {
+        font-size: 1rem;
+    }
+}

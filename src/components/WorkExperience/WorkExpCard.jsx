@@ -5,7 +5,8 @@ import "./WorkExpCard.css";
 const WorkExpCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
-      contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
+      contentArrowStyle={{ borderRight: "7px solid  white" }}
+      contentStyle={{color:"white"}}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={

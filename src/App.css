@@ -7,3 +7,6 @@
   box-sizing: border-box;
   perspective: 1000px;
 }
+a{
+  text-decoration: none;
+}
