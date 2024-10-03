@@ -9,6 +9,7 @@
   color: #0a0a0a;
 }
 .name-display {
+  margin-top: 30px;
   display: flex;
   font-size: 2rem;
   flex-direction: row;

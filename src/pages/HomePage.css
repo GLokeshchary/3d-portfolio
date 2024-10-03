@@ -1,7 +1,7 @@
 .home-container {
   width: 100%;
   height: 100vh;
-  position: relative; 
+  position: relative;
 }
 
 .intro-container {
@@ -22,6 +22,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 5px;
   justify-content: center;
 }
 
@@ -37,13 +38,22 @@
 
 .next-button {
   width: 100%;
+  margin-top: 10px;
   font-size: 14px;
   text-align: right;
-  color: wheat;
+  color: rgb(35, 184, 221);
 }
 
-.next-button span {
+.next-button button {
+  width: max-content;
+  padding: 10px;
   cursor: pointer;
+  border-radius: 10%;
+  transition: ease-in-out;
+  background-color: rgb(71, 170, 212);
+}
+.next-button button:hover {
+  background-color: rgb(14, 209, 244);
 }
 
 .stage-intro-container {
@@ -64,10 +74,16 @@
   color: rgb(188, 106, 55);
 }
 
-.ok-button span {
+.ok-button button {
+  padding: 5px;
   cursor: pointer;
+  border-radius: 10%;
+  transition: ease-in-out;
+  background-color: rgb(71, 170, 212);
 }
-
+.ok-button button:hover {
+  background-color: rgb(14, 209, 244);
+}
 .speaker {
   position: absolute;
   cursor: pointer;
@@ -78,16 +94,22 @@
   align-items: center;
   justify-content: center;
   background-color: rgb(100, 187, 245);
-  bottom: 20px; 
+  bottom: 20px;
   left: 20px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .inner-intro .name {
-      font-size: 25px;
+    font-size: 25px;
   }
   .inner-intro .status {
-      font-size: 20px;
+    font-size: 20px;
+  }
+  .stage-intro-container {
+    background-color: rgb(123, 100, 78);
+    padding: 10px;
+    text-align: center;
+    width: 400px;
   }
 }

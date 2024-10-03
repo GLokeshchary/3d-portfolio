@@ -6,6 +6,7 @@ import { VerticalTimeline } from "react-vertical-timeline-component";
 import { experiences } from "../constants/experiences";
 import WorkExpCard from "../components/WorkExperience/WorkExpCard";
 import Footer from "../components/Footer/Footer";
+import SocialiconsComp from "../components/SocialIcons/SocialiconsComp";
 const AboutPage = () => {
   return (
     <section className="about-container">
@@ -28,7 +29,7 @@ const AboutPage = () => {
         challenges and contribute to projects that make a difference.
       </div>
       <div className="my-skills">
-        <h2>My Treasures</h2>
+        <h2>My Arsenals</h2>
         <div className="skills-display">
           {TechStack.map((skill, index) => (
             <Coin key={index} data={skill.name} imgUrl={skill.imagelink} />
@@ -50,6 +51,7 @@ const AboutPage = () => {
       <div className="footer">
         <Footer/>
       </div>
+      <div><SocialiconsComp/></div>
     </section>
   );
 };

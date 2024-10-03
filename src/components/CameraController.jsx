@@ -8,14 +8,29 @@ function CameraController({ zoomIn, sideZoomIn, resetCamera, stageZoomIn }) {
       camera.position.lerp({ x: 0, y: 0, z: 4 }, 0.005);
       camera.lookAt(0, 0, 0);
     } else if (zoomIn) {
-      camera.position.set(0, 0, -1.4); // Zoom-in position
-      camera.lookAt(0, 0, 0);
+      if (window.innerWidth < 768) {
+        camera.position.set(0, -0.4, -2.6); // Zoom-in position
+        camera.lookAt(0, 0, 0);
+      } else {
+        camera.position.set(0, -0.4, -2.4); // Zoom-in position
+        camera.lookAt(0, 0, 0);
+      }
     } else if (sideZoomIn) {
-      camera.position.lerp({ x: -3, y: 0.4, z: -0.2 }, 0.005); // Side zoom-in position
-      camera.lookAt(0, 0, 0);
+      if (window.innerWidth < 768) {
+        camera.position.lerp({ x: -3, y: 0.4, z: -0.4 }, 0.005); // Side zoom-in position
+        camera.lookAt(0, 0, 0);
+      } else {
+        camera.position.lerp({ x: -3, y: 0.4, z: -0.2 }, 0.005); // Side zoom-in position
+        camera.lookAt(0, 0, 0);
+      }
     } else if (stageZoomIn) {
-      camera.position.lerp({ x: 0, y: 0.5, z: 2 },0.005);
-      camera.lookAt(0, 0, 0);
+      if (window.innerWidth) {
+        camera.position.lerp({ x: -0.3, y: 0.5, z: 2.5 }, 0.005);
+        camera.lookAt(0, 0, 0);
+      } else {
+        camera.position.lerp({ x: -0.3, y: 0.5, z: 2.2 }, 0.005);
+        camera.lookAt(0, 0, 0);
+      }
     }
   });
   return null;

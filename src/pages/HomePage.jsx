@@ -21,18 +21,44 @@ export const HomePage = () => {
   const [zoomIn, setzoomIn] = useState(false);
   const [sideZoomIn, setSideZoomIn] = useState(false);
   const [resetCamera, setResetCamera] = useState(false);
-  const [shipPosition, setShipPosition] = useState([-2, -1, 0.1]);
+  const [shipPosition, setShipPosition] = useState([-2.2, -1.6, 0.1]);
+  // Music Controls
   const [isPlayingMusic, setIsPlayingMusic] = useState(false);
   const audioRef = useRef(new Audio(got));
   audioRef.current.volume = 0.2;
   audioRef.current.loop = true;
-
+  //Markers Position
   const stagePostions = [
-    { postion: [-0.2, -0.2, 0.1], link: "about" },
-    { postion: [1.5, -0.2, 0.1], link: "projects" },
-    // { postion: [2.5, -0.2, 0.1], link: "resume" },
-    // { postion: [-2.5, 0.5, 0.1], link: "skills" },
+    {
+      postion: [shipPosition[0] + 1, shipPosition[1] + 0.8, 0],
+      link: "about",
+      tag: "Meet the Captain",
+    },
+    {
+      postion: [shipPosition[0] + 2.5, shipPosition[1] + 0.6, 0],
+      link: "projects",
+      tag: "Treasure Trove",
+    },
   ];
+  //Models position
+  // w[1, -8, 0]
+  // s[-2, -1, 0.1]
+  let wavePosition = [0, -2, 0];
+  //let shipPosition = [0, -1.6, 0];
+
+  const adjustIntroInfoPosition = () => {
+    let introPosition, stageIntroPosition;
+    if (window.innerWidth < 768) {
+      introPosition = [0, -1, -1.02];
+      stageIntroPosition = [-1.3, 0.6, 0];
+    } else {
+      introPosition = [0, -0.5, -4];
+      stageIntroPosition = [-3, -1.2, 1];
+    }
+    return [introPosition, stageIntroPosition];
+  };
+  const [introPosition, stageIntroPosition] = adjustIntroInfoPosition();
+
   useEffect(() => {
     if (isPlayingMusic) {
       audioRef.current.play();
@@ -60,17 +86,6 @@ export const HomePage = () => {
       clearTimeout(intro);
     };
   }, []);
-
-  const adjustIntroInfoPosition = () => {
-    let introPosition;
-    if (window.innerWidth < 768) {
-      introPosition = [0, -1, -1.02];
-    } else {
-      introPosition = [0, -0.5, -4];
-    }
-    return [introPosition];
-  };
-  const [introPosition] = adjustIntroInfoPosition();
   const handleNextStageEvent = () => {
     setShowIntro(false);
     setResetCamera(true);
@@ -93,7 +108,6 @@ export const HomePage = () => {
           <directionalLight position={[1, -8, 0]} intensity={2} />
           <ambientLight intensity={1.5} />
           <Sky />
-          {/* <LightHouse position={[-7.5, -0.6, 0]} /> */}
           <Ship movingShip={movingShip} position={shipPosition} />
           <CameraController
             zoomIn={zoomIn}
@@ -109,10 +123,10 @@ export const HomePage = () => {
                   <span className="status">I'm Software Engineer.</span>
                 </div>
                 <div className="next-button">
-                  <span onClick={() => handleNextStageEvent()}>
+                  <button onClick={() => handleNextStageEvent()}>
                     {" "}
                     Set sail to discover more
-                  </span>
+                  </button>
                 </div>
               </div>
             </Html>
@@ -123,25 +137,26 @@ export const HomePage = () => {
                 <Stage
                   position={stage.postion}
                   key={index}
+                  tag={stage.tag}
                   stageZoomIn={stageZoomIn}
                   link={stage.link}
                 />
               );
             })}
           {stageIntro && (
-            <Html position={[-2, -1.2, 1]}>
+            <Html position={stageIntroPosition}>
               <div className="stage-intro-container">
                 <div className="">
                   Explore these <FaLocationDot color="gold" /> markers to
                   uncover hidden treasures.
                 </div>
                 <div className="ok-button">
-                  <span onClick={() => handleZoomin()}>OK</span>
+                  <button onClick={() => handleZoomin()}>OK</button>
                 </div>
               </div>
             </Html>
           )}
-          <WaterWave position={[1, -8, 0]} />
+          <WaterWave position={wavePosition} />
         </Suspense>
       </Canvas>
       <div

@@ -1,3 +1,9 @@
+
+.stage-container{
+  display: flex;
+  flex-direction: column;
+}
+
 .normalstage{
   color: gold;
   animation: shine 2s infinite alternate, revolve 5s linear infinite;
@@ -31,4 +37,9 @@
   100% {
     transform: rotateY(360deg);
   }
+}
+
+.tag-span{
+  width: max-content;
+  color: white;
 }

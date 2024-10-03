@@ -3,6 +3,7 @@ import "./Project.css";
 import { ProjectCard } from "../components/ProjectCard/ProjectCard";
 import { projects } from "../constants/projects";
 import Footer from "../components/Footer/Footer";
+import SocialiconsComp from "../components/SocialIcons/SocialiconsComp";
 const Project = () => {
   return (
     <section className="project-container">
@@ -26,6 +27,7 @@ const Project = () => {
       <div className="footer">
         <Footer/>
       </div>
+      <div><SocialiconsComp/></div>
     </section>
   );
 };
