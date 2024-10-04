@@ -8,11 +8,11 @@ const Footer = () => {
         Have a project in mind? <br className="sm:block hidden" />
         Let’s build something together!
       </p>
-      <div className="linkbutton">
-        <Link to="/contact" className="btn">
+      <Link to="/contact" className="btn">
+        <div className="linkbutton">
           <span>Contact</span>
-        </Link>
-      </div>
+        </div>
+      </Link>
     </section>
   );
 };

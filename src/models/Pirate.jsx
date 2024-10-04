@@ -1,14 +1,14 @@
 import { useEffect, useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
+import pirateModel from "../myassets/3d/pirate.glb"
+
 
 const Pirate = ({ currentAnimation, ...props }) => {
   const pirateRef = useRef();
-  const { scene, animations } = useGLTF("/pirate.glb");
-
+  const { scene, animations } = useGLTF(pirateModel);
   const { actions } = useAnimations(animations, pirateRef);
   useEffect(() => {
     Object.values(actions).forEach((action) => action.stop());
-
     if (actions[currentAnimation]) {
       actions[currentAnimation].play();
     }

@@ -1,3 +1,6 @@
+import DashBoard from "../myassets/images/DashBoard.png"
+import Home from "../myassets/images/Home.png"
+import portfolio from "../myassets/images/2dportfolio.png"
 export const projects = [
   {
     projectName: "Anime Sense",
@@ -9,7 +12,7 @@ export const projects = [
       { name: "mysql", color: "#78aae7" },
       { name: "java", color: "#f3a54c" },
     ],
-    projectImage: "/projects/DashBoard.png",
+    projectImage: DashBoard,
     githunLink: "https://github.com/GLokeshchary/AnimeSense-Frontend",
     liveLink: "https://anime-sense.vercel.app/",
   },
@@ -18,7 +21,7 @@ export const projects = [
     projectDescription:
       "This portfolio showcases my journey as a developer, highlighting my projects and skills in web development. Built using React.js, the portfolio is designed to provide a user-friendly experience, allowing visitors to navigate seamlessly through my work. Each project is detailed with descriptions, technologies used, and links to live demos and GitHub repositories.",
     tags: [{ name: "react", color: "#00ffff" }],
-    projectImage: "/projects/2dportfolio.png",
+    projectImage: portfolio,
     githunLink: "https://github.com/GLokeshchary/portfolio/tree/master",
     liveLink: "https://findlokeshchary.netlify.app/",
   },
@@ -32,7 +35,7 @@ export const projects = [
       { name: "mysql", color: "#78aae7" },
       { name: "java", color: "#f3a54c" },
     ],
-    projectImage: "/projects/Home.png",
+    projectImage: Home,
     githunLink:
       "https://github.com/GLokeshchary/FlightManagementSystem-Frontend/tree/master",
     liveLink: "",

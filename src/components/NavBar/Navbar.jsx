@@ -30,13 +30,13 @@ const Navbar = () => {
           <div className="dropdown-content">
             <div className="resume-box">
               <FaFileAlt />
-              <a href="/assests/CharyResume.pdf" target="_blank">
+              <a href="/CharyResume.pdf" target="_blank">
                 VIEW RESUME
               </a>
             </div>
             <div className="resume-box">
               <IoMdDownload />
-              <a href="/assests/CharyResume.pdf" download="LokeshCharyResume.pdf">
+              <a href="/CharyResume.pdf" download="LokeshCharyResume.pdf">
                 DOWNLOAD RESUME
               </a>
             </div>

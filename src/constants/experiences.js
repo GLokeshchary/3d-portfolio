@@ -1,8 +1,10 @@
+import capgemini from "../myassets/images/capgemini.png"
+
 export const experiences = [
   {
     title: "Senior Analyst",
     company_name: "Capgemini",
-    icon: "/assests/capgemini.png",
+    icon: capgemini,
     iconBg: "#accbe1",
     date: "June 2022 - Present",
     points: [
