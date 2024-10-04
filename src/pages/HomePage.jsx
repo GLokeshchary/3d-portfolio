@@ -12,6 +12,8 @@ import { Html } from "@react-three/drei";
 import Stage from "../components/Stage/Stage";
 import { FaLocationDot } from "react-icons/fa6";
 import got from "/assests/got.mp3";
+
+
 export const HomePage = () => {
   const [showIntro, setShowIntro] = useState(false);
   const [stages, setStages] = useState(false);
