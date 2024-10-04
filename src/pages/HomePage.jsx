@@ -24,33 +24,66 @@ export const HomePage = () => {
   const [shipPosition, setShipPosition] = useState([-2.2, -1.6, 0.1]);
   // Music Controls
   const [isPlayingMusic, setIsPlayingMusic] = useState(false);
-  const audioRef = useRef(new Audio(got));
-  audioRef.current.volume = 0.2;
-  audioRef.current.loop = true;
   //Markers Position
-  const stagePostions = [
+  const [stagePositions, setStagePositions] = useState([
     {
-      postion: [shipPosition[0] + 1, shipPosition[1] + 0.8, 0],
+      position: [shipPosition[0] + 1, shipPosition[1] + 0.8, 0],
       link: "about",
       tag: "Meet the Captain",
     },
     {
-      postion: [shipPosition[0] + 2.5, shipPosition[1] + 0.6, 0],
+      position: [shipPosition[0] + 2.5, shipPosition[1] + 0.6, 0],
       link: "projects",
       tag: "Treasure Trove",
     },
-  ];
-  //Models position
-  // w[1, -8, 0]
-  // s[-2, -1, 0.1]
+  ]);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setStagePositions([
+          {
+            position: [shipPosition[0] + 2.5, shipPosition[1] + 0.8, 0],
+            link: "about",
+            tag: "Meet the Captain",
+          },
+          {
+            position: [shipPosition[0] + 1.5, shipPosition[1] + 0.8, 0],
+            link: "projects",
+            tag: "Treasure Trove",
+          },
+        ]);
+      } else {
+        setStagePositions([
+          {
+            position: [shipPosition[0] + 1, shipPosition[1] + 0.8, 0],
+            link: "about",
+            tag: "Meet the Captain",
+          },
+          {
+            position: [shipPosition[0] + 2.5, shipPosition[1] + 0.6, 0],
+            link: "projects",
+            tag: "Treasure Trove",
+          },
+        ]);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, [shipPosition]);
+
+  //Music Controls
+  const audioRef = useRef(new Audio(got));
+  audioRef.current.volume = 0.2;
+  audioRef.current.loop = true;
   let wavePosition = [0, -2, 0];
-  //let shipPosition = [0, -1.6, 0];
 
   const adjustIntroInfoPosition = () => {
     let introPosition, stageIntroPosition;
     if (window.innerWidth < 768) {
       introPosition = [0, -1, -1.02];
-      stageIntroPosition = [-1.3, 0.6, 0];
+      stageIntroPosition = [-1.3, 0.9, 0];
     } else {
       introPosition = [0, -0.5, -4];
       stageIntroPosition = [-3, -1.2, 1];
@@ -132,10 +165,10 @@ export const HomePage = () => {
             </Html>
           )}
           {stages &&
-            stagePostions.map((stage, index) => {
+            stagePositions.map((stage, index) => {
               return (
                 <Stage
-                  position={stage.postion}
+                  position={stage.position}
                   key={index}
                   tag={stage.tag}
                   stageZoomIn={stageZoomIn}
