@@ -8,7 +8,7 @@ import { WaterWave } from "../models/WaterWave";
 import { Sky } from "../models/Sky";
 import Ship from "../models/Ship";
 import CameraController from "../components/CameraController";
-import { Html, OrbitControls } from "@react-three/drei";
+import { Html } from "@react-three/drei";
 import Stage from "../components/Stage/Stage";
 import { FaLocationDot } from "react-icons/fa6";
 import got from "/assests/got.mp3";
@@ -22,8 +22,8 @@ export const HomePage = () => {
   const [sideZoomIn, setSideZoomIn] = useState(false);
   const [resetCamera, setResetCamera] = useState(false);
   const [shipPosition, setShipPosition] = useState([-2.2, -1.6, 0.1]);
-  // Music Controls
   const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+
   //Markers Position
   const [stagePositions, setStagePositions] = useState([
     {
@@ -67,7 +67,6 @@ export const HomePage = () => {
         ]);
       }
     };
-
     window.addEventListener("resize", handleResize);
     handleResize();
     return () => window.removeEventListener("resize", handleResize);
@@ -77,8 +76,10 @@ export const HomePage = () => {
   const audioRef = useRef(new Audio(got));
   audioRef.current.volume = 0.2;
   audioRef.current.loop = true;
+  //ocean position
   let wavePosition = [0, -2, 0];
 
+  //Adjusting Intro and stage positions
   const adjustIntroInfoPosition = () => {
     let introPosition, stageIntroPosition;
     if (window.innerWidth < 768) {
@@ -92,6 +93,7 @@ export const HomePage = () => {
   };
   const [introPosition, stageIntroPosition] = adjustIntroInfoPosition();
 
+  //Music render
   useEffect(() => {
     if (isPlayingMusic) {
       audioRef.current.play();
@@ -100,6 +102,7 @@ export const HomePage = () => {
       audioRef.current.pause();
     };
   }, [isPlayingMusic]);
+
   useEffect(() => {
     setMovingShip(true);
     setzoomIn(true);
@@ -119,6 +122,7 @@ export const HomePage = () => {
       clearTimeout(intro);
     };
   }, []);
+
   const handleNextStageEvent = () => {
     setShowIntro(false);
     setResetCamera(true);
@@ -128,16 +132,17 @@ export const HomePage = () => {
     setStages(true);
     setStageIntro(true);
   };
+
   const handleZoomin = () => {
     setStageIntro(false);
     setResetCamera(false);
     setStageZoomIn(true);
   };
+
   return (
     <section className="home-container">
       <Canvas camera={{ near: 0.1, far: 1000 }}>
         <Suspense fallback={<Loader flag={"main"} />}>
-          {/* <OrbitControls enableDamping enableRotate /> */}
           <directionalLight position={[1, -8, 0]} intensity={2} />
           <ambientLight intensity={1.5} />
           <Sky />
