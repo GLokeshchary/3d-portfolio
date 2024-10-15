@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { MeshStandardMaterial } from "three";
-import waterModel from "../myassets/3d/freeocean.glb";
+import waterModel from "/3d/freeocean.glb";
 export const WaterWave = (props) => {
   const waveRef = useRef();
   const { scene, animations } = useGLTF(waterModel);

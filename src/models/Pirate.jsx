@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
-import pirateModel from "../myassets/3d/pirate.glb"
+import pirateModel from "/3d/pirate.glb"
 
 
 const Pirate = ({ currentAnimation, ...props }) => {

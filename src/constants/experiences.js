@@ -1,4 +1,4 @@
-import capgemini from "../myassets/images/capgemini.png"
+import capgemini from "/Images/capgemini.png"
 
 export const experiences = [
   {

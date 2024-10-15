@@ -1,6 +1,6 @@
-import DashBoard from "../myassets/images/DashBoard.png"
-import Home from "../myassets/images/Home.png"
-import portfolio from "../myassets/images/2dportfolio.png"
+import DashBoard from "/Images/DashBoard.png"
+import Home from "/Images/Home.png"
+import portfolio from "/Images/2dportfolio.png"
 export const projects = [
   {
     projectName: "Anime Sense",

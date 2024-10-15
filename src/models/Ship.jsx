@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import shipScene from "../myassets/3d/ship.glb";
+import shipScene from "/3d/ship.glb";
 
 const Ship = ({movingShip, ...props}) => {
   const shipRef = useRef();
