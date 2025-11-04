@@ -1,115 +1,218 @@
+/* ==============================
+   🌟 General Layout
+============================== */
 .home-container {
   width: 100%;
   height: 100vh;
   position: relative;
+  background: linear-gradient(180deg, #00111a 0%, #00334d 100%);
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  color: white;
 }
 
+/* ==============================
+   🚢 Intro Section
+============================== */
 .intro-container {
   width: max-content;
   background: transparent;
   height: max-content;
-  padding: 15px;
-  color: white;
+  padding: 25px 40px;
   border-radius: 20px;
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out forwards;
 }
 
 .into {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .inner-intro {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
-  justify-content: center;
+  gap: 10px;
 }
 
 .inner-intro .name {
-  font-weight: bold;
-  font-size: 35px;
+  font-weight: 700;
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #4fc3f7, #0288d1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .inner-intro .status {
-  font-weight: 600;
-  font-size: 25px;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #b2ebf2;
 }
 
+/* ==============================
+   ⚓ Buttons
+============================== */
 .next-button {
-  width: 100%;
-  margin-top: 10px;
-  font-size: 14px;
-  text-align: right;
-  color: rgb(35, 184, 221);
+  margin-top: 15px;
 }
 
 .next-button button {
-  width: max-content;
-  padding: 10px;
+  background: linear-gradient(135deg, #00bcd4, #0288d1);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
   cursor: pointer;
-  border-radius: 10%;
-  transition: ease-in-out;
-  background-color: rgb(71, 170, 212);
-}
-.next-button button:hover {
-  background-color: rgb(14, 209, 244);
+  transition: all 0.3s ease;
 }
 
+.next-button button:hover {
+  background: linear-gradient(135deg, #4dd0e1, #039be5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 188, 212, 0.4);
+}
+
+/* ==============================
+   🗺️ Stage Intro
+============================== */
 .stage-intro-container {
   width: max-content;
-  background: transparent;
-  height: max-content;
-  padding: 15px;
-  font-size: 25px;
-  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
   border-radius: 20px;
-  font-weight: bold;
+  padding: 20px 30px;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  max-width: max-content;
+  line-height: 1.6;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
 .ok-button {
-  width: 100%;
-  font-size: 14px;
-  text-align: center;
-  color: rgb(188, 106, 55);
+  margin-top: 15px;
 }
 
 .ok-button button {
-  padding: 5px;
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
   cursor: pointer;
-  border-radius: 10%;
-  transition: ease-in-out;
-  background-color: rgb(71, 170, 212);
+  transition: all 0.3s ease;
 }
+
 .ok-button button:hover {
-  background-color: rgb(14, 209, 244);
+  background: linear-gradient(135deg, #66bb6a, #43a047);
+  transform: scale(1.05);
 }
+
+/* ==============================
+   🔊 Speaker Icon
+============================== */
 .speaker {
   position: absolute;
   cursor: pointer;
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
+  bottom: 20px;
+  left: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(100, 187, 245);
-  bottom: 20px;
-  left: 20px;
+  background: linear-gradient(135deg, #4fc3f7, #0288d1);
+  color: white;
+  box-shadow: 0 0 15px rgba(79, 195, 247, 0.5);
+  transition: all 0.3s ease;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+.speaker:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #81d4fa, #039be5);
+}
+
+/* ==============================
+   📱 Responsive Design
+============================== */
+@media (max-width: 1024px) {
   .inner-intro .name {
-    font-size: 25px;
+    font-size: 2rem;
   }
   .inner-intro .status {
-    font-size: 20px;
+    font-size: 1.2rem;
   }
   .stage-intro-container {
-    background-color: rgb(123, 100, 78);
-    padding: 10px;
-    text-align: center;
-    width: 400px;
+    font-size: 1.1rem;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-container {
+    padding: 20px;
+  }
+  .inner-intro .name {
+    font-size: 1.8rem;
+  }
+  .inner-intro .status {
+    font-size: 1.1rem;
+  }
+  .next-button button {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+  .stage-intro-container {
+    width: 260%;
+    font-size: 1rem;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inner-intro .name {
+    font-size: 1.35rem;
+  }
+  .inner-intro .status {
+    font-size: 1rem;
+  }
+  .next-button button {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+  .speaker {
+    width: 40px;
+    height: 40px;
+    bottom: 15px;
+    left: 15px;
+  }
+}
+
+/* ==============================
+   ✨ Animations
+============================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

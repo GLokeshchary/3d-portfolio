@@ -9,10 +9,10 @@ function CameraController({ zoomIn, sideZoomIn, resetCamera, stageZoomIn }) {
       camera.lookAt(0, 0, 0);
     } else if (zoomIn) {
       if (window.innerWidth < 768) {
-        camera.position.set(0, -0.4, -2.6); // Zoom-in position
+        camera.position.set(1, -0.4, -2.6); // Zoom-in position
         camera.lookAt(0, 0, 0);
       } else {
-        camera.position.set(0, -0.4, -2.4); // Zoom-in position
+        camera.position.set(1, -0.4, -2.4); // Zoom-in position
         camera.lookAt(0, 0, 0);
       }
     } else if (sideZoomIn) {

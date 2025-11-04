@@ -30,7 +30,7 @@ export const HomePage = () => {
     {
       position: [shipPosition[0] + 1, shipPosition[1] + 0.8, 0],
       link: "about",
-      tag: "Meet the Captain",
+      tag: "Meet Captain",
     },
     {
       position: [shipPosition[0] + 2.5, shipPosition[1] + 0.6, 0],
@@ -45,7 +45,7 @@ export const HomePage = () => {
           {
             position: [shipPosition[0] + 2.5, shipPosition[1] + 0.8, 0],
             link: "about",
-            tag: "Meet the Captain",
+            tag: "Meet Captain",
           },
           {
             position: [shipPosition[0] + 1.5, shipPosition[1] + 0.8, 0],
@@ -84,14 +84,15 @@ export const HomePage = () => {
   const adjustIntroInfoPosition = () => {
     let introPosition, stageIntroPosition;
     if (window.innerWidth < 768) {
-      introPosition = [0, -1, -1.02];
+      introPosition = [0, 0, -1.1]; // moved up and closer
       stageIntroPosition = [-1.3, 0.9, 0];
     } else {
-      introPosition = [0, -0.5, -4];
-      stageIntroPosition = [-3, -1.2, 1];
+      introPosition = [0, 0, -2]; // centered for desktop
+      stageIntroPosition = [-2, 1.2, 1];
     }
     return [introPosition, stageIntroPosition];
   };
+
   const [introPosition, stageIntroPosition] = adjustIntroInfoPosition();
 
   //Music render
