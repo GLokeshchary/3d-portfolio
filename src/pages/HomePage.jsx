@@ -159,7 +159,7 @@ export const HomePage = () => {
               <div className="into">
                 <div className="inner-intro">
                   <span className="name">Hi , My Name Is Lokesh Chary.</span>
-                  <span className="status">I'm Software Engineer.</span>
+                  <span className="status">I'm Full Stack Developer.</span>
                 </div>
                 <div className="next-button">
                   <button onClick={() => handleNextStageEvent()}>

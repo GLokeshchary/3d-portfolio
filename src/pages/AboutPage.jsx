@@ -8,6 +8,24 @@ import WorkExpCard from "../components/WorkExperience/WorkExpCard";
 import Footer from "../components/Footer/Footer";
 import SocialiconsComp from "../components/SocialIcons/SocialiconsComp";
 const AboutPage = () => {
+  const getExperienceDuration = (startDate) => {
+    const start = new Date(startDate);
+    const now = new Date();
+
+    let years = now.getFullYear() - start.getFullYear();
+    let months = now.getMonth() - start.getMonth();
+
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+
+    return `${years} year${years !== 1 ? "s" : ""} ${months} month${
+      months !== 1 ? "s" : ""
+    }`;
+  };
+
+  const duration = getExperienceDuration("2022-06-01");
   return (
     <section className="about-container">
       <div className="name-display">
@@ -16,8 +34,8 @@ const AboutPage = () => {
       </div>
       <div className="description">
         Hi! I’m Lokesh Chary Gattoji, a full-stack web developer and software
-        engineer with 2.3 years of experience in the software industry, based in
-        Hyderabad, India. My journey in software engineering has been both
+        engineer with {duration} of experience in the software industry, based
+        in Hyderabad, India. My journey in software engineering has been both
         exciting and transformative, and I've had the privilege of working with
         a variety of technologies. I specialize in building robust applications
         using Spring Boot, Java, and Microservices on the backend, while
@@ -49,9 +67,11 @@ const AboutPage = () => {
         </div>
       </div>
       <div className="footer">
-        <Footer/>
+        <Footer />
       </div>
-      <div><SocialiconsComp/></div>
+      <div>
+        <SocialiconsComp />
+      </div>
     </section>
   );
 };
